@@ -104,8 +104,7 @@ This **modular structure** ensures scalability, easier maintenance, and the flex
 
 ### System Overview:
 
-![Ainosha Technical Architecture](./system-flowchart.svg)
-<img src="./system-flowchart.svg" alt="Ainosha Technical Architecture" width="100%">
+![Ainosha Technical Architecture](./flowchart.png)
 
 ## Comparisons & Advantages
 Below is a brief comparison of Ainosha against other AI agent analytics platforms. For a detailed breakdown, see the [research notes](#) (coming soon).
