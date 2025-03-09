@@ -14,8 +14,7 @@ Ainosha is an AI-driven crypto advisory and asset management platform built to e
 5. [Comparisons \& Advantages: Ainosha vs. Traditional Approaches](#comparisons--advantages-ainosha-vs-traditional-approaches)
 6. [Roadmap \& Future Enhancements](#roadmap--future-enhancements)
 7. [Team \& Partnerships](#team--partnerships)
-8. [Alignment with Anoma’s Vision](#alignment-with-anomas-vision)
-9. [Call to Action](#call-to-action)
+8. [Call to Action](#call-to-action)
 
 ## Project Overview
 Ainosha Companion is designed to assist both **retail traders** and **professional investors** in making informed trading decisions. Our platform:
@@ -130,22 +129,72 @@ Below is a high-level comparison between **Ainosha’s AI-driven, automated plat
 
 ## Roadmap & Future Enhancements
 
-### Phase 1: Foundational MVP
-- Launch the basic platform with user onboarding, initial AI analytics, and a simplified dashboard.
-- Implement multi-channel morning briefs and trade lifecycle alerts.
-- Implement primary exchange API integrations and basic risk management features.
+### Short-Term – MVP Launch & AI Refinement
+- **MVP Development:**
+    - Complete development of the Minimum Viable Product.
+    - Implement core AI functionalities such as automated report generation on a select number of cryptocurrencies.
+    - Launch a basic user dashboard with initial language localization (e.g., English plus one additional language).
 
-### Phase 2: Core Feature Expansion
-- Roll out advanced AI advisory functionalities and enhanced portfolio optimization.
-- Introduce a subscription model and expand API integrations to support additional exchanges.
-- Upgrade risk management features to include dynamic stop-loss and take-profit automation.
-- Introduce predictive algorithms for price forecasting and anomaly detection.
+- **Private Beta Testing:**
+    - Roll out the MVP to a closed beta group of early adopters (approximately 100–200 users drawn from our waitlist and community).
+    - Collect feedback on report accuracy, usability, and desired feature enhancements.
 
-### Phase 3: Ecosystem Integration & Scale-Up
-- Develop next-generation AI models to further refine trading signals.
-- Provide side-by-side performance metrics of AI vs. user decisions.
-- Explore partnerships with institutional investors and integrate with emerging DeFi ecosystems.
-- Prepare for deeper integration with the Anoma intents ecosystem to leverage intent-centric infrastructure.
+- **AI Model Tuning:**
+    - Refine the AI models during the beta period to improve insight relevance and translation quality.
+    - Set a target of achieving over 80% beta user satisfaction and converting at least 50% of beta users to active weekly users.
+
+- **Initial Traction:**
+    - Begin growing our online presence by launching the website with a blog and publishing AI-driven market insights.
+    - Aim to achieve 1,000+ sign-ups on the waitlist/platform and generate the first 100 AI reports.
+
+### Mid-Term – Product Market Fit & Public Launch
+- **Public Launch:**
+    - Officially launch Ainosha Companion to the public following MVP iteration.
+    - Introduce a freemium model with a free tier alongside a premium tier for early adopters.
+
+- **User Acquisition & Growth:**
+    - Aggressively execute user acquisition strategies, leveraging referral programs and community marketing.
+    - Target onboarding around 10,000 registered users with approximately 1,000 paying subscribers.
+
+- **Feature Expansion:**
+    - Continuously enhance the platform based on user feedback.
+    - Add personalized alerts, portfolio tracking integration, and support for 3–5 additional languages to drive global growth.
+
+- **AI Enhancement:**
+    - Implement advanced AI analytics, including predictive price trend indicators and risk scores.
+    - Expand asset coverage from the initial subset to over 100 crypto assets.
+
+- **B2B Pilot Partnerships:**
+    - Secure at least 1–2 pilot partnerships (e.g., one crypto exchange and one traditional financial platform).
+    - Validate our B2B value through the signing of the first B2B contract, even if revenue is minimal initially.
+
+- **Revenue Generation:**
+    - Begin generating initial revenue from subscriptions, aiming for a monthly recurring revenue (MRR) of approximately $20K by the end of the first year.
+
+### Long-Term – Scaling, Partnerships & Expansion
+- **Scale User Base:**
+    - Invest in growth channels to exponentially increase the user base, targeting 50,000+ total users with a growing percentage of paying customers.
+    - Expand successful referral campaigns, content marketing, and international expansion initiatives.
+
+- **Global Market Expansion:**
+    - Enhance the platform to support 5–7 major languages, addressing ~80% of the global investor community.
+    - Adapt content for region-specific data sources as needed to ensure a truly global presence.
+
+- **Deepen Moat via AI:**
+    - Continuously enhance AI capabilities by incorporating real-time learning and possibly adding a conversational interface.
+    - Aim to launch a second-generation AI model that leverages user interaction data for even more tailored insights.
+
+- **Major Partnerships:**
+    - Convert initial pilot partnerships into full-scale engagements and secure 3–5 annual licensing deals with exchanges or fintech firms.
+    - Expand user reach through co-marketing efforts and platform integrations with strategic partners.
+
+- **Revenue & Sustainability:**
+    - Achieve $1M+ annual recurring revenue (ARR) by combining individual subscriptions with B2B contracts.
+    - Use this revenue as proof of business viability to position for future funding or profitability.
+
+- **Team Growth & Operations:**
+    - Scale customer support, technical infrastructure, and regulatory compliance in line with user growth.
+    - Expand the team from 5–7 to approximately 15–20 members, including additional data scientists, support staff, and regional business leads.
 
 ---
 
@@ -163,22 +212,6 @@ Below is a high-level comparison between **Ainosha’s AI-driven, automated plat
 ### Strategic Partnerships:
 - We are actively seeking partnerships with leading crypto exchanges, risk management firms, and blockchain infrastructure providers.
 - Our advisors include industry experts with a track record of successful blockchain and AI ventures.
-
----
-
-## Alignment with Anoma’s Vision
-
-Ainosha aspires to be an “intent-centric” AI application, which resonates with [Anoma’s vision](https://anoma.net/blog/introducing-intents-initiates#who-should-apply). Here are key steps toward alignment:
-
-1. **User Intents**: Model each user request as an *intent*—“Analyze this asset,” “Monitor my portfolio risk.” A decentralized execution framework can then fulfill these intents securely.
-
-2. **Privacy & Data Sovereignty**: Implement robust encryption and consider privacy-preserving techniques so users retain control over sensitive financial data.
-
-3. **Decentralized Architecture**:
-    - Explore running modules on a blockchain or using decentralized oracles for market data.
-    - Potentially incorporate zero-knowledge proofs or other privacy solutions so analytics can run trustlessly.
-
-4. **Open Source Collaboration**: Anoma welcomes collaborative projects. By **open-sourcing** components of Ainosha, the community can contribute new data connectors, ML modules, or risk models.
 
 ---
 
