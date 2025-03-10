@@ -127,74 +127,87 @@ Below is a high-level comparison between **Ainosha’s AI-driven, automated plat
 
 ---
 
-## Roadmap & Future Enhancements
+## Roadmap & Future Enhancements (Q1 2025 – Q4 2026)
 
-### Short-Term – MVP Launch & AI Refinement
-- **MVP Development:**
-    - Complete development of the Minimum Viable Product.
-    - Implement core AI functionalities such as automated report generation on a select number of cryptocurrencies.
-    - Launch a basic user dashboard with initial language localization (e.g., English plus one additional language).
+### Q1 2025: Foundational MVP Development
+- **MVP Feature Completion & Demo:**
+    - ~~Auto-generate market insights for BTC, ETH and LINK.~~
+    - ~~Analyst chart display.~~
+    - All core features are developed and ready for internal demo.
+- **Internal Testing:**
+    - Conduct initial testing with a small group (approx. 20 users) within the team.
+    - Record baseline performance metrics for the AI models (e.g., initial prediction accuracy).
+- **AI Model Baseline Evaluation:**
+    - Set initial targets: Aim to achieve a 50% predictive effectiveness after the first 2 weeks of testing.
 
-- **Private Beta Testing:**
-    - Roll out the MVP to a closed beta group of early adopters (approximately 100–200 users drawn from our waitlist and community).
-    - Collect feedback on report accuracy, usability, and desired feature enhancements.
+### Q2 2025: Private Beta Expansion & AI Model Evaluation
+- **Beta Testing Expansion:**
+    - Grow the testing group to around 100 users (internal and select external users).
+    - Collect quantitative feedback on report accuracy, usability, and feature requests.
+- **AI Model Tuning & Performance Metrics:**
+    - Evaluate the AI model’s performance over 2- and 4-week periods.
+    - Establish clear KPIs (e.g., achieving 50% predictive effectiveness initially and targeting 70% after iterative improvements).
+- **Iteration & Refinement:**
+    - Use collected data to refine report generation, analyst charts, and money flow analysis.
+    - Adjust the AI algorithms based on measured performance and feedback.
 
-- **AI Model Tuning:**
-    - Refine the AI models during the beta period to improve insight relevance and translation quality.
-    - Set a target of achieving over 80% beta user satisfaction and converting at least 50% of beta users to active weekly users.
+### Q3 2025: Public Beta Launch & Feature Refinement
+- **Public Beta Rollout:**
+    - Open the beta to a wider audience aiming for 1,000+ sign-ups.
+    - Expand asset coverage beyond BTC and ETH as part of the demo.
+- **Enhanced Feature Set:**
+    - Integrate personalized alerts and additional visualization tools.
+    - Incorporate expanded language support to demonstrate multi-language capability.
+- **AI Model Continuous Evaluation:**
+    - Implement a feedback loop to monitor AI prediction performance over time.
+    - Report on metrics (e.g., maintain or improve to 70% predictive accuracy over 4 weeks).
 
-- **Initial Traction:**
-    - Begin growing our online presence by launching the website with a blog and publishing AI-driven market insights.
-    - Aim to achieve 1,000+ sign-ups on the waitlist/platform and generate the first 100 AI reports.
+### Q4 2025: Market Readiness & Initial Commercialization
+- **MVP Finalization:**
+    - Finalize the product based on public beta feedback.
+    - Ensure all core functionalities are stable and meet performance targets.
+- **Investor-Ready Demo:**
+    - Prepare polished demos highlighting successful features and robust AI performance (e.g., consistent 70%+ prediction accuracy).
+- **Pilot B2B Partnerships:**
+    - Initiate pilot partnerships with 1–2 exchanges or financial platforms to validate B2B integration.
+    - Collect early revenue feedback and performance data from these pilots.
 
-### Mid-Term – Product Market Fit & Public Launch
-- **Public Launch:**
-    - Officially launch Ainosha Companion to the public following MVP iteration.
-    - Introduce a freemium model with a free tier alongside a premium tier for early adopters.
+### Q1–Q4 2026: Scaling, Partnerships & Global Expansion
 
-- **User Acquisition & Growth:**
-    - Aggressively execute user acquisition strategies, leveraging referral programs and community marketing.
-    - Target onboarding around 10,000 registered users with approximately 1,000 paying subscribers.
+#### Q1 2026: User Base Scaling & Feature Set Expansion
+- **Platform Scale-Up:**
+    - Increase the user base significantly through targeted marketing and community outreach.
+    - Add API integrations for additional exchanges.
+- **Enhanced Localization:**
+    - Extend language support to cover 5–7 major languages.
+- **Ongoing AI Model Improvements:**
+    - Continuously track performance, aiming for incremental improvements toward 80%+ prediction accuracy.
 
-- **Feature Expansion:**
-    - Continuously enhance the platform based on user feedback.
-    - Add personalized alerts, portfolio tracking integration, and support for 3–5 additional languages to drive global growth.
+#### Q2 2026: Deepening Market Penetration & Institutional Partnerships
+- **Conversion of Pilot Partnerships:**
+    - Transition successful pilot engagements into full-scale B2B contracts.
+    - Expand licensing deals with centralized exchanges.
+- **Operational Excellence:**
+    - Enhance the platform’s infrastructure to support increased load and diversified user needs.
+    - Regular performance reviews (every 2–4 weeks) to ensure AI models meet advanced benchmarks.
 
-- **AI Enhancement:**
-    - Implement advanced AI analytics, including predictive price trend indicators and risk scores.
-    - Expand asset coverage from the initial subset to over 100 crypto assets.
+#### Q3 2026: Advanced AI & Advisory Enhancements
+- **Next-Generation AI Modules:**
+    - Deploy advanced predictive algorithms and real-time learning capabilities.
+    - Introduce a conversational interface for interactive market queries.
+- **Comparative Performance Metrics:**
+    - Launch features that display side-by-side performance of AI-generated insights versus user decisions.
+    - Use historical data to refine and showcase AI superiority.
 
-- **B2B Pilot Partnerships:**
-    - Secure at least 1–2 pilot partnerships (e.g., one crypto exchange and one traditional financial platform).
-    - Validate our B2B value through the signing of the first B2B contract, even if revenue is minimal initially.
-
-- **Revenue Generation:**
-    - Begin generating initial revenue from subscriptions, aiming for a monthly recurring revenue (MRR) of approximately $20K by the end of the first year.
-
-### Long-Term – Scaling, Partnerships & Expansion
-- **Scale User Base:**
-    - Invest in growth channels to exponentially increase the user base, targeting 50,000+ total users with a growing percentage of paying customers.
-    - Expand successful referral campaigns, content marketing, and international expansion initiatives.
-
-- **Global Market Expansion:**
-    - Enhance the platform to support 5–7 major languages, addressing ~80% of the global investor community.
-    - Adapt content for region-specific data sources as needed to ensure a truly global presence.
-
-- **Deepen Moat via AI:**
-    - Continuously enhance AI capabilities by incorporating real-time learning and possibly adding a conversational interface.
-    - Aim to launch a second-generation AI model that leverages user interaction data for even more tailored insights.
-
-- **Major Partnerships:**
-    - Convert initial pilot partnerships into full-scale engagements and secure 3–5 annual licensing deals with exchanges or fintech firms.
-    - Expand user reach through co-marketing efforts and platform integrations with strategic partners.
-
-- **Revenue & Sustainability:**
-    - Achieve $1M+ annual recurring revenue (ARR) by combining individual subscriptions with B2B contracts.
-    - Use this revenue as proof of business viability to position for future funding or profitability.
-
-- **Team Growth & Operations:**
-    - Scale customer support, technical infrastructure, and regulatory compliance in line with user growth.
-    - Expand the team from 5–7 to approximately 15–20 members, including additional data scientists, support staff, and regional business leads.
+#### Q4 2026: Consolidation & Preparation for Series A
+- **Market Consolidation:**
+    - Achieve targeted annual recurring revenue and robust user engagement metrics.
+    - Fine-tune operational processes and customer support systems.
+- **Global Expansion:**
+    - Intensify outreach efforts in international markets with localized content and strategic partnerships.
+- **Series A Readiness:**
+    - Compile comprehensive performance and growth metrics to position the company favorably for the next funding round.
+    - Finalize a robust product roadmap that demonstrates both scalability and technological excellence.
 
 ---
 
