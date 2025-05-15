@@ -1,0 +1,666 @@
+openapi: 3.0.0
+info:
+  title: Ainosha MVC API
+  description: |
+    API for user authentication, role management, and content management.
+
+    ## Authentication
+
+    This API supports two authentication methods:
+
+    1. **Bearer Token Authentication**: Used for user-based authentication. Obtain a token via the login endpoint and include it in the `Authorization` header as `Bearer {token}`.
+
+    2. **API Key Authentication**: Used for webhook endpoints. Include the API key in the `X-API-Key` header or as an `api_key` query parameter.
+  version: 1.0.0
+servers:
+  - url: https://api.example.com/api/v1
+    description: Production Server
+  - url: http://localhost:8000/api/v1
+    description: Local Development
+
+paths:
+  /auth/login:
+    post:
+      tags:
+        - Authentication
+      summary: User login
+      description: Authenticates a user and returns a JWT token
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+        required: true
+      responses:
+        "201":
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        "401":
+          $ref: '#/components/responses/401_unauthorized'
+        "500":
+          $ref: '#/components/responses/500_internal_server_error'
+
+  /auth/logout:
+    post:
+      tags:
+        - Authentication
+      summary: User logout
+      description: Logs out the authenticated user
+      responses:
+        "204":
+          $ref: '#/components/responses/204_no_content'
+        "401":
+          description: Unauthorized
+        "500":
+          $ref: '#/components/responses/500_internal_server_error'
+      security:
+        - BearerAuth: []
+
+  /auth/me:
+    get:
+      tags:
+        - Authentication
+      summary: Get current user information
+      description: Retrieves information about the authenticated user
+      responses:
+        "200":
+          description: User information retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _metadata:
+                    $ref: '#/components/schemas/SuccessResult'
+                  result:
+                    type: object
+                    properties:
+                      user:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          name:
+                            type: string
+                          email:
+                            type: string
+        "401":
+          $ref: '#/components/responses/401_unauthorized'
+        "500":
+          $ref: '#/components/responses/500_internal_server_error'
+      security:
+        - BearerAuth: []
+
+  /permissions:
+    get:
+      tags:
+        - Permission Management
+      summary: Get all permissions
+      description: Retrieves all permissions (requires super-admin role)
+      responses:
+        "200":
+          description: Permissions retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Permission'
+        "401":
+          $ref: '#/components/responses/401_unauthorized'
+        "500":
+          $ref: '#/components/responses/500_internal_server_error'
+      security:
+        - BearerAuth: []
+    post:
+      tags:
+        - Permission Management
+      summary: Create a new permission
+      description: Creates a new permission (requires super-admin role)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePermissionRequest'
+        required: true
+      responses:
+        "201":
+          description: Permission created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+                  data:
+                    $ref: '#/components/schemas/Permission'
+        "400":
+          $ref: '#/components/responses/400_bad_request'
+        "401":
+          $ref: '#/components/responses/401_unauthorized'
+        "500":
+          $ref: '#/components/responses/500_internal_server_error'
+      security:
+        - BearerAuth: []
+
+  /permissions/{permission}:
+    get:
+      tags:
+        - Permission Management
+      summary: Get a specific permission
+      description: Retrieves a specific permission by ID (requires super-admin role)
+      parameters:
+        - name: permission
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Permission retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/Permission'
+        "401":
+          $ref: '#/components/responses/401_unauthorized'
+        "404":
+          $ref: '#/components/responses/404_not_found'
+        "500":
+          $ref: '#/components/responses/500_internal_server_error'
+      security:
+        - BearerAuth: []
+    put:
+      tags:
+        - Permission Management
+      summary: Update a permission
+      description: Updates an existing permission (requires super-admin role)
+      parameters:
+        - name: permission
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePermissionRequest'
+        required: true
+      responses:
+        "200":
+          description: Permission updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+                  data:
+                    $ref: '#/components/schemas/Permission'
+        "400":
+          $ref: '#/components/responses/400_bad_request'
+        "401":
+          $ref: '#/components/responses/401_unauthorized'
+        "404":
+          $ref: '#/components/responses/404_not_found'
+        "500":
+          $ref: '#/components/responses/500_internal_server_error'
+      security:
+        - BearerAuth: []
+    delete:
+      tags:
+        - Permission Management
+      summary: Delete a permission
+      description: Deletes a permission (requires super-admin role)
+      parameters:
+        - name: permission
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Permission deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+        "401":
+          $ref: '#/components/responses/401_unauthorized'
+        "404":
+          $ref: '#/components/responses/404_not_found'
+        "500":
+          $ref: '#/components/responses/500_internal_server_error'
+      security:
+        - BearerAuth: []
+
+  /roles:
+    get:
+      tags:
+        - Role Management
+      summary: Get all roles
+      description: Retrieves all roles (requires super-admin role)
+      responses:
+        "200":
+          description: Roles retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _metadata:
+                    $ref: '#/components/schemas/SuccessResult'
+                  result:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Role'
+        "401":
+          $ref: '#/components/responses/401_unauthorized'
+        "500":
+          $ref: '#/components/responses/500_internal_server_error'
+      security:
+        - BearerAuth: []
+    post:
+      tags:
+        - Role Management
+      summary: Create a new role
+      description: Creates a new role (requires super-admin role)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRoleRequest'
+        required: true
+      responses:
+        "200":
+          description: Role created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _metadata:
+                    $ref: '#/components/schemas/SuccessResult'
+                  result:
+                    $ref: '#/components/schemas/Role'
+        "400":
+          $ref: '#/components/responses/400_bad_request'
+        "401":
+          $ref: '#/components/responses/401_unauthorized'
+        "500":
+          $ref: '#/components/responses/500_internal_server_error'
+      security:
+        - BearerAuth: []
+
+  /roles/{id}:
+    get:
+      tags:
+        - Role Management
+      summary: Get a specific role
+      description: Retrieves a specific role by ID (requires super-admin role)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Role retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _metadata:
+                    $ref: '#/components/schemas/SuccessResult'
+                  result:
+                    $ref: '#/components/schemas/Role'
+        "401":
+          $ref: '#/components/responses/401_unauthorized'
+        "404":
+          $ref: '#/components/responses/404_not_found'
+        "500":
+          $ref: '#/components/responses/500_internal_server_error'
+      security:
+        - BearerAuth: []
+    put:
+      tags:
+        - Role Management
+      summary: Update a role
+      description: Updates an existing role (requires super-admin role)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateRoleRequest'
+        required: true
+      responses:
+        "200":
+          description: Role updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _metadata:
+                    $ref: '#/components/schemas/SuccessResult'
+                  result:
+                    $ref: '#/components/schemas/Role'
+        "400":
+          $ref: '#/components/responses/400_bad_request'
+        "401":
+          $ref: '#/components/responses/401_unauthorized'
+        "404":
+          $ref: '#/components/responses/404_not_found'
+        "500":
+          $ref: '#/components/responses/500_internal_server_error'
+      security:
+        - BearerAuth: []
+    delete:
+      tags:
+        - Role Management
+      summary: Delete a role
+      description: Deletes a role (requires super-admin role)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Role deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _metadata:
+                    $ref: '#/components/schemas/SuccessResult'
+                  result:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: Role deleted successfully
+        "401":
+          $ref: '#/components/responses/401_unauthorized'
+        "404":
+          $ref: '#/components/responses/404_not_found'
+        "500":
+          $ref: '#/components/responses/500_internal_server_error'
+      security:
+        - BearerAuth: []
+
+components:
+  schemas:
+    SuccessResult:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+    LoginRequest:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      required: ["email", "password"]
+    LoginResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+          example: Bearer
+        expires_at:
+          type: integer
+        token_name:
+          type: string
+          example: access_token
+    Permission:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The permission ID
+          example: 3
+        name:
+          type: string
+          description: The permission name
+          example: edit articles
+        guard_name:
+          type: string
+          description: The guard name
+          example: web
+    CreatePermissionRequest:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          description: The permission name
+          example: edit articles
+        guard_name:
+          type: string
+          description: The guard name
+          example: web
+    UpdatePermissionRequest:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          description: The permission name
+          example: edit articles
+        guard_name:
+          type: string
+          description: The guard name
+          example: web
+    Role:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The role ID
+          example: 1
+        name:
+          type: string
+          description: The role name
+          example: editor
+        guard_name:
+          type: string
+          description: The guard name
+          example: web
+        permissions:
+          type: array
+          description: The permissions assigned to this role
+          items:
+            type: string
+          example: ["edit articles", "publish articles"]
+    CreateRoleRequest:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          description: The role name
+          example: editor
+        guard_name:
+          type: string
+          description: The guard name
+          example: web
+        permissions:
+          type: array
+          description: The permissions to assign to this role
+          items:
+            type: string
+          example: ["edit articles", "publish articles"]
+    UpdateRoleRequest:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          description: The role name
+          example: editor
+        guard_name:
+          type: string
+          description: The guard name
+          example: web
+        permissions:
+          type: array
+          description: The permissions to assign to this role
+          items:
+            type: string
+          example: ["edit articles", "publish articles"]
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  responses:
+    204_no_content:
+      description: No content
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              _metadata:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+    400_bad_request:
+      description: Validation error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              _metadata:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+              result:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Request validation error
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        detail:
+                          type: string
+                    example: [
+                      { detail: Some description of a validation error },
+                      { detail: Some other description of a validation error }
+                    ]
+    401_unauthorized:
+      description: Authentication Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              _metadata:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+              result:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Authentication Failed. Api-Key was invalid.
+    404_not_found:
+      description: Not found error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              _metadata:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+              result:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'Resource not found'
+    500_internal_server_error:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              _metadata:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+              result:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: An error was encountered while attempting to process the request. Please contact the System Administrator.
+                  details:
+                    type: string
+                    example: Check server logs for more information. 

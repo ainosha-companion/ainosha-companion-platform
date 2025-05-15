@@ -1,0 +1,4 @@
+name,symbol,contract_address,network
+Bitcoin,BTC,bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh,bitcoin
+Ethereum,ETH,0x2eaa73bd0db20c64f53febea7b5f5e5bccc7fb8b,ethereum
+Chainlink,LINK,0x513c7e3a7e1177ad46b55d54a773dab99ebe2204,ethereum
