@@ -219,13 +219,23 @@ Below is a high-level comparison between **Ainosha's AI-driven, automated platfo
 ## Team & Partnerships
 
 ### Our Team:
-- **Tony Le – Founder & Lead Developer:**  
-  Experienced in backend development with a strong passion for crypto and AI.
-  Backgrounds in **PHP, Python, Node.js**, and containerized deployment (Docker, AWS).
-- **Hiep Nguyen – Co-founder & Senior Fullstack Developer:**  
-  Skilled in frontend development and UI/UX design, with a focus on user-centric platforms.
-- **Davele – Core Advisor:**  
-  Focused on strategic partnerships and business development.
+- **Tony Le – Founder & Lead Developer**  
+  Visionary technologist and founder driving backend architecture and system design. Expert in PHP, Python, Node.js, and scalable containerized deployments (Docker, AWS).
+
+- **Kaito – Senior Researcher & AI Automation Expert**  
+  Leads advanced AI research and automation initiatives, specializing in machine learning, algorithmic trading models, and AI-driven workflow optimization.
+
+- **Danh – Senior Backend Developer**  
+  Architect of robust microservices and API integrations, with deep experience in designing high-performance data pipelines and distributed systems.
+
+- **Hau – Frontend & Mobile Developer**  
+  Crafts responsive web UIs and native mobile applications using React, React Native, and Flutter, ensuring seamless user experiences across devices.
+
+- **Huyen – Designer & Frontend Developer**  
+  User-centric UI/UX designer and frontend engineer, proficient with Figma, HTML, CSS, and React, committed to creating intuitive and visually compelling interfaces.
+
+- **Davele – Core Advisor**  
+  Strategic advisor on partnerships, go-to-market strategies, and business development, guiding growth through industry expertise and strategic alliances.
 
 ### Strategic Partnerships:
 - We are actively seeking partnerships with leading crypto exchanges, risk management firms, and blockchain infrastructure providers.
